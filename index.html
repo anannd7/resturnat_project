@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himalayan Feast - Authentic Nepalese Cuisine</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Himalayan Feast</h1>
+        <p>Authentic Nepalese Cuisine</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#appetizers">Appetizers</a></li>
+            <li><a href="#main-courses">Main Courses</a></li>
+            <li><a href="#desserts">Desserts</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="carousel">
+            <div class="carousel-images">
+              <img src="https://media.istockphoto.com/id/1133151212/photo/japanese-dumplings-gyoza-with-pork-meat-and-vegetables.jpg?s=612x612&w=0&k=20&c=vC6GTUDGK6dD5_QHvY1V7fVUdPx-z4TG73DUACR_L5s=" class="carousel-item active" alt="Delicious Momo">
+              <img src="https://t4.ftcdn.net/jpg/02/75/39/23/360_F_275392381_9upAWW5Rdsa4UE0CV6gRu2CwUETjzbKy.jpg" class="carousel-item" alt="Traditional Dal Bhat">
+              <img src="https://t3.ftcdn.net/jpg/02/57/21/40/360_F_257214005_63auIfr9KN0gTHt28w6G8hoP2k45ScyP.jpg" class="carousel-item" alt="Crispy Sel Roti">
+            </div>
+            <button class="carousel-control carousel-prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-control carousel-next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        <section id="appetizers">
+            <h2>Appetizers</h2>
+            <div class="menu-item">
+                <img src="https://media.istockphoto.com/id/1408775854/photo/indian-food-momo-with-chicken-and-tomato-sauce-on-dark-blue-table.jpg?s=612x612&w=0&k=20&c=ekB4vv1cTBfk-zyPmVKeLdzYqiO1slMNg0nfXe5Y0xE=" class="menu-item-image">
+                <div class="menu-item-details">
+                    <div class="menu-item-description">Nepalese dumplings filled with seasoned vegetables or meat.</div>
+                </div>
+                <div class="menu-item-price">Rs. 250</div>
+            </div>
+            <div class="menu-item">
+                <img src="https://recipenp.com/wp-content/uploads/2020/04/mix-chatamari-2.jpg" alt="Chatamari" class="menu-item-image">
+                <div class="menu-item-details">
+                    <div class="menu-item-description">Traditional Newari rice crepe topped with eggs, vegetables, or meat.</div>
+                </div>
+                <div class="menu-item-price">Rs. 300</div>
+            </div>
+        </section>
+        <section id="main-courses">
+            <h2>Main Courses</h2>
+            <div class="menu-item">
+                <img src="https://cdn.shopify.com/s/files/1/0223/0981/files/Dal_Bhat_from_Nepal_curry_dhal_lentils_spinach_rice_yogurt.jpg?v=1618366911" alt="Dal Bhat" class="menu-item-image">
+                <div class="menu-item-details">
+                    <div class="menu-item-description">Classic Nepalese meal with lentil soup, rice, vegetables, and pickles.</div>
+                </div>
+                <div class="menu-item-price">Rs. 450</div>
+            </div>
+            <div class="menu-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTRGsCk2fPdmDgIe0K6qFMU1QjVQQUqBJPAA&s" alt="Gundruk" class="menu-item-image">
+                <div class="menu-item-details">
+                    <div class="menu-item-description">Fermented leafy greens cooked in traditional Nepalese style.</div>
+                </div>
+                <div class="menu-item-price">Rs. 200</div>
+            </div>
+        </section>
+        <section id="desserts">
+            <h2>Desserts</h2>
+            <div class="menu-item">
+                <img src="https://images.slurrp.com/prod/articles/a48pgaek60j.webp" alt="Sel Roti" class="menu-item-image">
+                <div class="menu-item-details">
+                    <div class="menu-item-description">Sweet, crispy rice doughnut, deep-fried to perfection.</div>
+                </div>
+                <div class="menu-item-price">Rs. 150</div>
+            </div>
+            <div class="menu-item">
+                <img src="https://i.pinimg.com/736x/55/f7/c8/55f7c803c4120c628feab035455a313b.jpg" alt="Yomari" class="menu-item-image">
+                <div class="menu-item-details">
+                    <div class="menu-item-description">Steamed rice flour dumpling filled with molasses and sesame seeds.</div>
+                </div>
+                <div class="menu-item-price">Rs. 250</div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Himalayan Feast</p>
+        <p>456 Everest Road, Kathmandu</p>
+        <p>For reservations: (980) 765-4321</p>
+    </footer>
+    <script>
+        const carousel = document.querySelector('.carousel-images');
+        const items = carousel.querySelectorAll('.carousel-item');
+        const prevBtn = document.querySelector('.carousel-prev');
+        const nextBtn = document.querySelector('.carousel-next');
+        let currentIndex = 0;
+        function showSlide(index) {
+            items.forEach(item => item.classList.remove('active'));
+            currentIndex = (index + items.length) % items.length;
+            items[currentIndex].classList.add('active');
+        }
+        prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
+        nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+        setInterval(() => showSlide(currentIndex + 1), 5000);
+
+        document.addEventListener('DOMContentLoaded', () => {
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    menuItems.forEach(item => {
+        const image = item.querySelector('.menu-item-image');
+        
+        // Hover effects
+        item.addEventListener('mouseenter', () => {
+            image.style.transform = 'scale(1.05)';
+            image.style.transition = 'transform 0.3s ease';
+            item.style.boxShadow = '0 8px 15px rgba(0, 0, 0, 0.15)';
+        });
+
+        item.addEventListener('mouseleave', () => {
+            image.style.transform = 'scale(1)';
+            item.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+        });
+
+        // Image load optimization
+        if (image.complete) {
+            optimizeImage(image);
+        } else {
+            image.addEventListener('load', () => optimizeImage(image));
+        }
+    });
+
+    function optimizeImage(imgElement) {
+        // Ensure high-quality display
+        imgElement.style.imageRendering = 'crisp-edges';
+        
+        // Optional: create a canvas to potentially improve image quality
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = imgElement.naturalWidth;
+        canvas.height = imgElement.naturalHeight;
+        
+        // Draw the image with high-quality scaling
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
+        ctx.drawImage(imgElement, 0, 0, canvas.width, canvas.height);
+        
+        // Optional: replace image with canvas if quality improvement is noticeable
+        // imgElement.src = canvas.toDataURL();
+    }
+});
+    </script>
+</body>
+</html>
